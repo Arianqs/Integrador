@@ -1,0 +1,51 @@
+@charset "UTF-8";
+.cinema-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+      text-align: left;
+}
+
+.cinema-card {
+    width: 410px; 
+    overflow: hidden;
+    text-align: left;
+    margin-left: 650px; /* Mueve el contenedor hacia la derecha */
+}
+
+
+.cinema-card:hover {
+    transform: translateY(-5px);
+}
+
+.cinema-card img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.cinema-card .content {
+    padding: 2px;
+    text-align: left;
+}
+
+.cinema-card .content h3 {
+    margin: 0;
+    font-size: 1.2em;
+   
+}
+
+.cinema-card .content p {
+    margin: -13px 0;
+    color: #000; 
+      text-align: left;
+       margin-left: 23px; 
+}
+
+.cinema-card .content span {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+}

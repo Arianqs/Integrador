@@ -1,0 +1,391 @@
+/* Contenedor principal */
+.cont-todo-cartelera {
+    display: flex; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f9f9f9;
+    gap: 20px; 
+    position: relative;
+    left: -60px; 
+      height: 200px; 
+}
+
+
+.cont-encabezado-agrepeli, .cont-encabezado-peli {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.cont-encabezado-agrepeli h1, .cont-encabezado-peli h1 {
+    font-size: 48px;
+    margin: 80px 0 35px 0;
+    font-family: 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    color: #333;
+}
+.cont-filtro-acordeon {
+    width: 190px;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    position: absolute; /* Mantén absolute si quieres que siga en la misma posición */
+    top: 0;             /* Sigue alineado al tope del contenedor padre */
+    left: 0px;         /* Alinea el contenedor a la izquierda */
+}
+
+
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.acordeon-item {
+    margin-bottom: 10px;
+  
+    border: none;                   /* Asegúrate de que no haya borde */
+}
+.acordeon-button {
+    background-color: transparent;  /* Quita el fondo del botón */
+    border: none;                   /* Asegúrate de que no haya borde */
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acordeon-button:hover {
+     background-color: rgba(0, 0, 0, 0.1); /* Agrega un fondo ligero al pasar el mouse */
+}
+
+.acordeon-content {
+    display: none;
+    padding: 10px 0;
+}
+
+.acordeon-content select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.mostrar-peliculas-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.mostrar-peliculas-button:hover {
+    background-color: #0056b3;
+}
+
+.cont-unido-peliculas {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    margin-left: 60px; /* Empuja el contenedor hacia la derecha */
+}
+
+
+.cont-cartelera-peli {
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; 
+    text-align: center;
+    float: right; 
+    margin-left: 70px;
+}
+
+
+.cont-pelicula {
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: 0.85em;
+    width: 226px;
+    float: right; 
+       left: -10px; 
+    
+}
+.movie-container {
+    border-radius: 8px; 
+    padding: 10px; 
+    text-align: center; 
+    margin: 0.4cm; 
+}
+
+.btn-view-more {
+    color: rgb(37, 150, 190);
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    padding: 10px 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold; 
+    margin-left: 460px; 
+    margin-right: 4px; 
+    margin: 1cm; 
+    margin-left: 350px;
+}
+
+.btn-view-more:hover {
+    background-color: #007bff;
+    color: white; 
+}
+
+.btn-view-more:hover {
+    background-color: #007bff;
+    color: white; 
+}
+
+.distributor-restriction-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.distributor-restriction {
+    color: red; 
+    font-size: 12px; 
+    margin-right: 5px;
+    margin: 0; 
+   text-align: center; 
+    margin-left: 150px;
+}
+
+.distributor-restrictionn {
+    color: black; 
+    font-size: 12px; 
+    margin: 0; 
+      text-align: center; 
+}
+
+.cont-pelicula:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.acordeon-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.acordeon-content {
+    display: none;
+    padding: 10px;
+    background-color: #fafafa;
+    border-top: 1px solid #ddd;
+}
+
+.acordeon-item {
+    margin-bottom: 10px;
+}
+
+.mostrar-peliculas-button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.mostrar-peliculas-button:hover {
+    background-color: #0056b3;
+}
+
+.cont-pelicula img {
+   width: 226px;
+      height: 339px;
+      object-fit: cover;
+}
+
+.cont-pelicula img:hover {
+    box-shadow: 0px 5px 15px rgba(66, 66, 66, 0.3);
+}
+
+/* Título y descripción de las películas */
+.cont-pelicula h2 {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.cont-pelicula p {
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Filtro y botones */
+.cont-filtro-peli {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 250px;
+    padding: 40px 20px 0 40px;
+    background-color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    
+}
+
+.combox-filtro {
+    position: relative;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.seleccionador-filtro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.seleccionador-filtro:hover {
+    border-bottom-color: #888;
+}
+
+/* Estilo para los labels de los combobox */
+.combox-filtro label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilo para los selectores de combobox */
+.combox-filtro select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+    appearance: none;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/60/60784.png'); /* Agregar icono de flecha */
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+}
+
+/* Efectos de hover y focus para el combobox */
+.combox-filtro select:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.combox-filtro select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+/* Animación para la entrada de los combobox */
+.combox-filtro select {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botones para filtrar */
+.cont-filtro-peli button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 85%;
+    margin-bottom: 10px;
+}
+
+.cont-filtro-peli button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cont-filtro-peli button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .cont-unido-peliculas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont-cartelera-peli {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .cont-pelicula {
+        width: 100%;
+        max-width: 400px;
+        margin: 15px 0;
+    }
+
+    .cont-filtro-peli {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cont-encabezado-agrepeli h1, .cont-encabezado-peli h1 {
+        font-size: 36px;
+        margin: 60px 0 20px 0;
+    }
+}
+
+

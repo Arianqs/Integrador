@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.banner-dulceria {
+    background: rgba(0, 50, 120, 9); 
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; 
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background {
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background .navdulc li a {
+    color: #000;
+}
+
+.banner-dulceria.white-background .navdulc .icon-link img {
+    filter: invert(0%) brightness(100%) grayscale(0%);
+}
+
+
+.navdulc {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navdulc li {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.navdulc li a {
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navdulc li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8080;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navdulc li a:hover::after {
+    bottom: -15px;
+    opacity: 1;
+}
+
+
+.navdulc .icon-link {
+    margin-right: 420px;
+    margin-left: 420px;  
+}
+
+.navdulc .icon-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+    transition: opacity 0.3s;
+    margin-right: 8px;
+}
+
+.navdulc .icon-link img:hover {
+    opacity: 0.8;
+}
+
+
+
+
+/* Estilo general para el contenedor principal */
+.main-content-butacas-entradas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre los paneles */
+    margin-top: 70px;
+    padding: 20px;
+}
+
+/* Panel izquierdo: estilo de butacas */
+.left-panel-butacas {
+    width: 25%;
+    margin-left: 11%;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.left-panel-butacas img {
+    width: 230px; 
+    height: 230px;
+    margin: 12px 20px;
+    margin-top: 90px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #fff; 
+}
+
+.left-panel-butacas h2 {
+	color: #004A8C;
+    font-family: sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.left-panel-butacas p {
+	font-family: sans-serif;
+	color: #092058;
+    font-size: 18px;
+    padding-left: 20%;
+   	text-align: left;
+}
+
+.left-panel-butacas p strong {
+    color: #003366; /* Azul oscuro */
+}
+
+.left-panel-butacas .user-info p {
+    color: #333333;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.left-panel-butacas .user-info p strong {
+    color: #333333;
+}
+
+
+/* Panel derecho: estilo de entradas */
+.right-panel-entradas {
+    width: 40%;
+    max-width: 37%;
+    margin: auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.banner-dulceria-productos {
+    filter: brightness(70%);
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: 12px;
+    z-index: 9;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(200.8064516129, 217.9677419355, 225.1935483871);
+}
+
+
+.banner-dulceria-productos .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-dulceria-productos .nav li {
+    display: inline-block; 
+    margin: 0 25px;
+}
+
+.banner-dulceria-productos .nav li span {
+    display: inline-block;
+    transition: transform 0.3s; 
+}
+
+.banner-dulceria-productos .nav li span:hover img {
+    filter: brightness(0) saturate(100%) invert(0%) hue-rotate(210deg); 
+    transform: scale(1.1);
+}
+
+.banner-dulceria-productos .nav li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+}
+
+.banner-dulceria-productos .nav li img:hover {
+    opacity: 0.8;
+}
+
+.right-panel-entradas h2 {
+    font-size: 1.4em;
+    color: #0056b3;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.right-panel-entradas p {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.entradas-generales h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.entrada-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.entrada-item label {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+}
+
+.entrada-item span {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.entrada-item strong {
+    color: #e63946;
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.cantidad-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cantidad-selector button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cantidad-selector button:hover {
+    background-color: #003d80;
+}
+
+.codigo-promocional {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.codigo-promocional input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.codigo-promocional button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.entradas-seleccionadas {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.entradas-seleccionadas p {
+    font-size: 1em;
+}
+
+.btn-confirmar {
+    width: 50%;
+    padding: 10px;
+    background-color: #ff0a54;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.btn-confirmar:hover {
+    background-color: #ff66ff; /* Color más claro al pasar el mouse */
+}
+
+
+
+
+
+/* Estilos específicos para la sección de entradas */
+.entradas-generales {
+    margin-top: 20px;
+}
+
+.entrada-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cantidad-selector {
+    display: flex;
+    align-items: center;
+}
+
+.cantidad-selector button {
+    padding: 5px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.cantidad-selector input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+

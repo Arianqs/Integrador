@@ -1,0 +1,363 @@
+@charset "UTF-8";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.banner-dulceria {
+    background: rgba(0, 50, 120, 9); 
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; 
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background {
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #ccc;
+}
+
+.banner-dulceria.white-background .navdulc li a {
+    color: #000;
+}
+
+.banner-dulceria.white-background .navdulc .icon-link img {
+    filter: invert(0%) brightness(100%) grayscale(0%);
+}
+
+
+.navdulc {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navdulc li {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.navdulc li a {
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navdulc li a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8080;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navdulc li a:hover::after {
+    bottom: -15px;
+    opacity: 1;
+}
+
+
+.navdulc .icon-link {
+    margin-right: 420px;
+    margin-left: 420px;  
+}
+
+.navdulc .icon-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+    transition: opacity 0.3s;
+    margin-right: 8px;
+}
+
+.navdulc .icon-link img:hover {
+    opacity: 0.8;
+}
+
+/*BANER DE DULCERI PRODUCTOS*/
+.banner-dulceria-productos {
+    filter: brightness(70%);
+    padding: 14px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: 72px;
+    z-index: 9;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(200.8064516129, 217.9677419355, 225.1935483871);
+}
+
+
+
+.banner-dulceria-productos .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-dulceria-productos .nav li {
+    display: inline-block; 
+    margin: 0 25px;
+}
+
+.banner-dulceria-productos .nav li span {
+    display: inline-block;
+    transition: transform 0.3s; 
+}
+
+.banner-dulceria-productos .nav li span:hover img {
+    filter: brightness(0) saturate(100%) invert(0%) hue-rotate(210deg); 
+    transform: scale(1.1);
+}
+
+.banner-dulceria-productos .nav li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%) brightness(100%) grayscale(100%);
+}
+
+.banner-dulceria-productos .nav li img:hover {
+    opacity: 0.8;
+} 
+
+
+
+.main-content-butacas {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 70%;
+    background-color: white;
+    margin-left: 140px; 
+}
+
+
+.left-panel-butacas {
+    width: 40%;
+    margin-left:55px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.left-panel-butacas img {
+    width: 230px; 
+    height: 230px;
+    margin: 12px 20px;
+    margin-top: 90px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #fff; 
+}
+
+.left-panel-butacas h2 {
+	color: #004A8C;
+    font-family: sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.left-panel-butacas p {
+	font-family: sans-serif;
+	color: #092058;
+    font-size: 18px;
+    padding-left: 5%;
+   	text-align: left;
+}
+
+
+.right-panel-butacas {
+    width: 95%;
+    padding-left: 90px;
+    padding-right: 25px;
+    background: linear-gradient(to bottom, #dae3e5, #ffffff);
+    border-left: 2px solid #c0c0c0; 
+    position: relative; 
+    left: 10px; 
+}
+
+.screen-label1 {
+	margin-top: 20px;
+	text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #d1d2f9;
+}
+.screen-label {
+    margin-bottom: 55px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px hsl(0, 0%, 94%), 0 10px 20px #fff;
+}
+
+
+
+.seating-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.row-label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+
+.seat {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    border-radius: 50%; 
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative; 
+}
+
+
+.seat[data-seat-number]:hover::after {
+    content: attr(data-seat-number);
+    position: absolute;
+    background-color: #222;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    top: -30px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+
+.seating-info {
+    display: flex; 
+    align-items: center;
+    margin: 20px 0;
+    justify-content: center; 
+}
+
+.seating-info span {
+    display: flex;
+    align-items: center;
+    margin: 20px 80px;
+}
+
+.seating-info .seat {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.seat.available {
+    background-color: transparent;
+    border: 2px solid #2780c4; 
+    color: #4CAF50;
+}
+
+.seat.occupied {
+    background-color: #ff4d4d;
+}
+
+.seat.selected {
+    background-color: #3333ff;
+}
+
+
+.selected-seats {
+    display: flex;
+    align-items: center; /* Alinea verticalmente en el centro */
+    justify-content: space-between; /* Espacio entre el texto y el botón */
+    gap: 10px;
+    
+    font-family: 'Montserrat', sans-serif;
+	font-size: 20px; 
+}
+
+.selected-seats p{
+	
+    margin: 0;
+    flex-grow: 1; 
+}
+
+.button-continue {
+  	padding: 15px 26px;
+    background-color: #ff0a54;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgb(200.8064516129, 217.9677419355, 225.1935483871), 0 0 25px #f27474;
+}
+
+.button-continue:hover {
+    background-color:#c9184a;
+}
+
+
+@media (min-width: 768px) {
+    .left-panel-butacas, .right-panel-butacas {
+        margin-top: 0;
+    }
+
+    .main-content-butacas {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-content-butacas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel-butacas, .right-panel-butacas {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

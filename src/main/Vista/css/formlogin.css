@@ -1,0 +1,285 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para ocupar toda la altura de la pantalla */
+    margin: 0;
+    font-family:Arial;
+}
+
+.header-line {
+    width: 100%;
+    height: 5px;
+    background-color:  #094293;
+}
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.socio-cineplanet {
+    font-family: 'Arial', sans-serif; 
+    font-size: 14px;
+    font-weight: normal; 
+    line-height: 1.5; 
+    color: #333333; 
+}
+
+.container-login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -150px; 
+    padding: 0; 
+}
+
+.small{
+	 font-size: 13px;
+}
+
+.form-login h3 {
+    margin-top: 0px; 
+}
+
+.form-login p {
+     margin-top: 5px;
+    font-size: 13px; 
+    line-height: 1.5; 
+}
+
+ .input-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-container label {
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-container input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #000;
+            padding: 8px 0;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-container small {
+            font-size: 12px;
+            color: gray;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .input-container span {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+.btn-atras {
+            display: inline-flex;
+            align-items: center;
+            color: #0078D4;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .btn-atras svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            fill: #0078D4;
+        }
+
+        .btn-atras:hover {
+            text-decoration: underline;
+        }
+h3 {
+    font-size: 2.5rem;
+    color: #094293;
+    margin-bottom: 20px;
+    text-align: center;
+  font-weight: 800;
+   margin-top: 5px;
+  
+}
+
+p{
+	  font-size: 1 rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+    .membership {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .membership p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .custom-radio {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            margin-right: 10px;
+            border-radius: 5px;
+            background-color: #d3d3d3; 
+        }
+
+
+        .si, .no {
+            background-color: #d3d3d3;
+        }
+
+        input[type="radio"]:checked + .custom-radio.si {
+            background-color: #003366;
+        }
+
+        input[type="radio"]:checked + .custom-radio.no {
+            background-color: #003366;
+        }
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 10px; 
+   text-decoration: none;
+       font-size:8px;
+}
+
+.forgot-link {
+    text-align: center;
+       text-decoration: none;
+         font-size:12px;
+    }
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.boton-envia {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-btn {
+    width: 40%;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+     border-radius: 25px;
+}
+
+
+.login-btn:hover {
+    background-color: #004085;
+     text-decoration: none;
+}
+
+.register {
+    text-align: center;
+}
+
+.join-link {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.join-link:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}
+
+.back-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+.registro-cineplanet {
+    position: relative;
+    top: 18px; 
+    text-align: center;
+    padding: 10px;
+}
+p.no-socio {
+    font-weight: bold; 
+}
+
+
+.boton-registro {
+    display: flex;
+    justify-content: center;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+
