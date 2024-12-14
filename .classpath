@@ -50,9 +50,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/json-20240303.jar"/>
-	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/Nueva carpeta/jakarta.servlet-api-6.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/Nueva carpeta/javax.mail-1.6.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/Nueva carpeta/javax.servlet-api-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/jasperreports-metadata-6.21.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/jasperreports-7.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/mail/jakarta.servlet-api-6.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/mail/javax.servlet-api-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/mail/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/layout-9.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zelad/Downloads/log4j-core-2.20.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

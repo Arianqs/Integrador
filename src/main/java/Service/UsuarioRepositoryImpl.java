@@ -23,8 +23,9 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     }
 
     @Override
-    public boolean registrarUsuario(String nombre, String apellidos, String celular, String dni, String email, String password) {
-        String sql = "INSERT INTO usuarios (nombre, apellidos, celular, dni, email, rol, password, fecha_creacion) VALUES (?, ?, ?, ?, ?, 'usuario', ?, NOW())";
+    public boolean registrarUsuario(String nombre, String apellidos, String celular, String dni, String email, String password, String confirpassword) {
+        // Adjust the query to reflect the correct column for confirpassword
+        String sql = "INSERT INTO usuarios (nombre, apellidos, celular, dni, email, rol, password, confirpassword, fecha_creacion) VALUES (?, ?, ?, ?, ?, 'usuario', ?, ?, NOW())";
         try (Connection conn = conexion.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, nombre);
@@ -33,10 +34,11 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
             stmt.setString(4, dni);
             stmt.setString(5, email);
             stmt.setString(6, password);
+            stmt.setString(7, confirpassword); // Corrected: now setting at position 7
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false; //retorna todo si hay fallo
+        return false; // Returns false if there's an error
     }
 }

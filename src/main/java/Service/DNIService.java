@@ -9,7 +9,7 @@ import java.net.URL;
 public class DNIService {
 
     private static final String API_URL = "https://api.apis.net.pe/v2/reniec/dni?numero=";
-    private static final String TOKEN = "apis-token-10244.FwkvlRQjdpD7G7g1HzFS7lUvp5ug6FL4"; // Reemplaza con tu token
+    private static final String TOKEN = "apis-token-12186.wc39FldI1dl9UwTjbcFWqz18EQNrULq5"; // Reemplaza con tu token
 
     public static String consultarDNI(String dni) {
         StringBuilder result = new StringBuilder();

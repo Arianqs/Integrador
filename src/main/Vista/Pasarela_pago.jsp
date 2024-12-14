@@ -260,7 +260,7 @@ String total = request.getParameter("total");
                 <div class="form-group">
 			        <input type="text" name="full-name" placeholder="Nombre Completo" required /> <!-- Campo de nombre completo visible -->
 			    </div>
-                <div class="form-group">
+                <div class="form-group" action="ComprobanteServlet" method="post" >
                     <input type="email" id="yape-email" name="email" value="<%= usuario %>" placeholder="Correo Electrónico" required readonly />
                 </div>
                 <p style="font-size: 14px; color: #333;">

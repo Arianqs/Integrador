@@ -45,13 +45,14 @@ public class met_registro {
     }
 
     // Método para registrar un usuario
-    public static boolean registrarUsuario(String nombre, String apellidos, String celular, String dni, String email, String password) {
+    public static boolean registrarUsuario(String nombre, String apellidos, String celular, String dni, String email, String password, String confirpassword) {
         if (nombre == null || nombre.isEmpty() || 
             apellidos == null || apellidos.isEmpty() || 
             celular == null || celular.isEmpty() || 
             dni == null || dni.isEmpty() || 
             email == null || email.isEmpty() || 
-            password == null || password.isEmpty()) {
+            password == null || password.isEmpty() ||
+            confirpassword == null || confirpassword.isEmpty()) {
             
             System.out.println("Todos los campos son obligatorios.");
             return false; // Retorna false si hay campos vacíos
@@ -62,9 +63,15 @@ public class met_registro {
             return false; // Retorna false si el email ya existe
         }
 
+        // Verificar si las contraseñas coinciden
+        if (!password.equals(confirpassword)) {
+            System.out.println("Las contraseñas no coinciden.");
+            return false; // Si las contraseñas no coinciden, no continúa
+        }
+
         Connection conn = null;
         PreparedStatement stmt = null;
-        String sql = "INSERT INTO usuarios (nombre, apellidos, celular, dni, email, rol, password, fecha_creacion) VALUES (?, ?, ?, ?, ?, 'usuario', ?, NOW())";
+        String sql = "INSERT INTO usuarios (nombre, apellidos, celular, dni, email, rol, password, fecha_creacion, confirpassword) VALUES (?, ?, ?, ?, ?,?, 'usuario', ?, NOW())";
 
         try {
             conn = conexion.getConnection();
@@ -79,8 +86,9 @@ public class met_registro {
             stmt.setString(3, celular);
             stmt.setString(4, dni);
             stmt.setString(5, email);
-            stmt.setString(6, password); // Almacena la contraseña sin hash
-
+            stmt.setString(6, password);
+            stmt.setString(7, confirpassword);// Almacena la contraseña sin hash (considera aplicar hash en producción)
+            
             int rowsAffected = stmt.executeUpdate();
             System.out.println("Filas afectadas: " + rowsAffected);
             return rowsAffected > 0; // Retorna true si se insertó al menos un registro
@@ -104,10 +112,8 @@ public class met_registro {
                 } catch (SQLException e) {
                     e.printStackTrace();
                     System.out.println("Error SQL: " + e.getMessage());
-
                 }
             }
         }
     }
 }
-

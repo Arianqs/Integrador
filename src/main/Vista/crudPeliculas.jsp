@@ -1,9 +1,6 @@
-<%@ page import="java.sql.*" %> 
+<%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
-<%@ page import="net.sf.jasperreports.engine.*" %>
-<%@ page import="java.util.HashMap" %>
 <%@ page import="Conexion.conexion" %>
-<%@ page import="net.sf.jasperreports.engine.export.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,10 +45,7 @@
 
         <label for="imagen">Ruta de Imagen:</label>
         <input type="text" id="imagen" name="imagen" required placeholder="Ej: nombre_imagen.jpg"><br>
-        
-        <input type="hidden" name="action" value="generarReporte">
-        <input type="submit" value="Generar Reporte">
-        
+
         <input type="submit" name="action" value="save">
     </form>
 
@@ -122,33 +116,33 @@
             }
 
             // Eliminar película
-            if ("Eliminar".equals(request.getParameter("actionDelete"))) {
-                try {
-                    // Asegúrate de que el parámetro id se esté pasando correctamente
-                    int id = Integer.parseInt(request.getParameter("id"));
-                    
-                    // Consulta SQL para eliminar
-                    String sqlDelete = "DELETE FROM pelicula WHERE pelicula.id = ?";
-                    ps = conn.prepareStatement(sqlDelete);
-                    ps.setInt(1, id);
-                    
-                    // Ejecutar la eliminación
-                    int rowsDeleted = ps.executeUpdate();
-                    
-                    // Verificar si se eliminó correctamente
-                    if (rowsDeleted > 0) {
-                        out.println("<script>alert('Película eliminada exitosamente.');</script>");
-                    } else {
-                        out.println("<script>alert('Error: No se pudo eliminar la película.');</script>");
-                    }
-                } catch (SQLException e) {
-                    out.println("<script>alert('Error al eliminar la película: " + e.getMessage() + "');</script>");
-                    e.printStackTrace();
-                } catch (NumberFormatException e) {
-                    out.println("<script>alert('Error en el ID de la película: " + e.getMessage() + "');</script>");
-                    e.printStackTrace();
-                }
-            }
+			if ("Eliminar".equals(request.getParameter("actionDelete"))) {
+			    try {
+			        // Asegúrate de que el parámetro id se esté pasando correctamente
+			        int id = Integer.parseInt(request.getParameter("id"));
+			        
+			        // Consulta SQL para eliminar
+			        String sqlDelete = "DELETE FROM pelicula WHERE pelicula.id = ?";
+			        ps = conn.prepareStatement(sqlDelete);
+			        ps.setInt(1, id);
+			        
+			        // Ejecutar la eliminación
+			        int rowsDeleted = ps.executeUpdate();
+			        
+			        // Verificar si se eliminó correctamente
+			        if (rowsDeleted > 0) {
+			            out.println("<script>alert('Película eliminada exitosamente.');</script>");
+			        } else {
+			            out.println("<script>alert('Error: No se pudo eliminar la película.');</script>");
+			        }
+			    } catch (SQLException e) {
+			        out.println("<script>alert('Error al eliminar la película: " + e.getMessage() + "');</script>");
+			        e.printStackTrace();
+			    } catch (NumberFormatException e) {
+			        out.println("<script>alert('Error en el ID de la película: " + e.getMessage() + "');</script>");
+			        e.printStackTrace();
+			    }
+			}
 
             // Listar películas
             try {
@@ -156,7 +150,6 @@
                 ps = conn.prepareStatement(sqlSelect);
                 rs = ps.executeQuery();
     %>
-    
     <h2>Listado de Películas</h2>
     <table border="1">
         <tr>
@@ -200,34 +193,30 @@
         <input type="submit" name="actionDelete" value="Eliminar" 
                onclick="return confirm('¿Está seguro de que desea eliminar esta película?');">
     </form>
+
+            <form action="crudPeliculas.jsp" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="<%= id %>">
+                <input type="submit" name="actionEdit" value="Editar">
+            </form>
         </td>
     </tr>
-    <% 
-        }
-    } catch (SQLException e) {
-        out.println("<script>alert('Error al listar las películas: " + e.getMessage() + "');</script>");
-        e.printStackTrace();
+    <%
     }
     %>
     </table>
-
-    <% 
+    <%
+            } catch (SQLException e) {
+                out.println("<script>alert('Error al listar las películas: " + e.getMessage() + "');</script>");
+                e.printStackTrace();
+            }
         } catch (SQLException e) {
-            out.println("<script>alert('Error al listar las películas: " + e.getMessage() + "');</script>");
+            out.println("<script>alert('Error de conexión: " + e.getMessage() + "');</script>");
             e.printStackTrace();
         } finally {
-            // Asegúrate de cerrar todos los recursos
-            if (rs != null) {
-                try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-            }
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { e.printStackTrace(); }
-            }
-            if (conn != null) {
-                try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
-            }
+            if (rs != null) try { rs.close(); } catch (SQLException e) { }
+            if (ps != null) try { ps.close(); } catch (SQLException e) { }
+            if (conn != null) try { conn.close(); } catch (SQLException e) { }
         }
     %>
-
 </body>
 </html>

@@ -11,10 +11,17 @@
     String dni = request.getParameter("numero_documento");
     String email = request.getParameter("correo");
     String password = request.getParameter("contrasena");
+    String confirpassword = request.getParameter("confirmar_contrasena");
 
     // Validación de campos
-    if (!ValidadorUsuario.validarCampos(nombre, apellidos, celular, dni, email, password)) {
+    if (!ValidadorUsuario.validarCampos(nombre, apellidos, celular, dni, email, password, confirpassword)) {
         out.println("<script>alert('Todos los campos son obligatorios.'); window.location='registro.jsp';</script>");
+        return;
+    }
+
+    // Verificar si las contraseñas coinciden
+    if (!password.equals(confirpassword)) {
+        out.println("<script>alert('Las contraseñas no coinciden.'); window.location='registro.jsp';</script>");
         return;
     }
 
@@ -23,7 +30,7 @@
     String passwordCifrada = null;
 
     try {
-        passwordCifrada = cifrado.cifrar(password);
+        passwordCifrada = cifrado.cifrar(password); // Cifrado de la contraseña
     } catch (Exception e) {
         e.printStackTrace();
         out.println("<script>alert('Error al cifrar la contraseña.'); window.location='registro.jsp';</script>");
@@ -33,14 +40,15 @@
     // Creación del repositorio de usuario
     UsuarioRepository usuarioRepo = new UsuarioRepositoryImpl();
 
-    // Verificación de correo existente
+    // Verificación de correo electrónico existente
     if (usuarioRepo.esEmailExistente(email)) {
         out.println("<script>alert('El correo electrónico ya está registrado.'); window.location='registro.jsp';</script>");
         return;
     }
 
-    // Registro del usuario
-    boolean registrado = usuarioRepo.registrarUsuario(nombre, apellidos, celular, dni, email, passwordCifrada);
+    // Registro del usuario con la contraseña cifrada
+    boolean registrado = usuarioRepo.registrarUsuario(nombre, apellidos, celular, dni, email, passwordCifrada, confirpassword);
+
     if (registrado) {
         out.println("<script>alert('Usuario registrado exitosamente.'); window.location='/cineplanet_/index.jsp';</script>");
     } else {
